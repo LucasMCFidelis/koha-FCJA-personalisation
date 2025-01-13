@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      /* Container do cabeçalho */
+      .header_container {
+        display: flex; /* Usando Flexbox */
+        align-items: center; /* Alinha verticalmente os itens */
+        background-color: #b21616;
+        background-image: radial-gradient(
+          ellipse at center center,
+          #ef2d2d 1%,
+          #7d1111 100%
+        );
+        color: #fff;
+        height: 130px;
+        padding: 0 20px; /* Adiciona espaçamento interno */
+      }
+
+      /* Logo */
+      .header_logo {
+        height: 100px; /* Ajusta a altura da logo */
+        width: auto;
+        object-fit: contain; /* Garante que a logo se ajuste sem distorcer */
+        border: 3px solid white; /* Borda ao redor da logo */
+        border-radius: 8px; /* Borda arredondada */
+      }
+
+      /* Contêiner de texto */
+      .header_text {
+        text-align: left; /* Alinha o texto à esquerda */
+        margin-left: 20px; /* Espaçamento da logo */
+      }
+
+      /* Título */
+      .header_title {
+        font-size: 2.5em;
+        font-weight: bold;
+        color: #fff;
+        letter-spacing: -0.05em;
+        margin: 0; /* Remove margens extras */
+      }
+
+      /* Subtítulo */
+      .header_subtitle {
+        font-size: 0.77em;
+        margin-top: 5px; /* Dá um espaçamento entre o título e o subtítulo */
+      }
+
+      /* Texto adicional */
+      .header_extra {
+        font-size: 1em;
+        color: #fff;
+        margin-top: 5px;
+      }
+
+      /* Esconde o texto em telas pequenas */
+      @media (max-width: 600px) {
+        .header_text {
+          display: none; /* Oculta o bloco de texto */
+        }
+      }
+    </style>
+
+    <header class="header_container">
+      <a href="#" class="teste"
+        ><img
+          src="https://pbs.twimg.com/profile_images/2391557581/xsvhscrahzhzxt6laqpz_400x400.jpeg"
+          alt="Logo FCJA"
+          class="header_logo"
+      /></a>
+      <div class="header_text">
+        <span class="header_extra">Fundação Casa de José Américo</span>
+        <h1 class="header_title">FCJA</h1>
+        <span class="header_subtitle"
+          >Sistema Integrado de Bibliotecas da FCJA</span
+        >
+      </div>
+    </header>
+  </body>
+</html>
