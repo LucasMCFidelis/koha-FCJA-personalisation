@@ -1,27 +1,4 @@
 <style>
-  /* Estilos equivalentes ao Bootstrap */
-  .container-fluid {
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
-  }
-
-  .col {
-    position: relative;
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-
   #opaccredits {
     padding: 20px;
     background-color: #f8f9fa;
@@ -68,8 +45,12 @@
     justify-self: flex-start;
   }
 
+  .work_area a button{
+    font-weight: 600;
+  }
+
   .button_work_area {
-    background: #069cc2;
+    background: #8d0909;
     border-radius: 6px;
     padding: 4px;
     cursor: pointer;
@@ -77,197 +58,34 @@
     border: none;
     font-size: 12px;
   }
+
+  .actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    color: #fff;
+  }
+.actions .button_work_area{
+    color: #fff;
+  }
 </style>
-
 <div class="container-fluid">
-  <div class="row">
-    <div class="col">
-      <div id="opaccredits">
-        <div class="default_item">
-          <div class="default_body">
-            <div>
-              <h2>Bases de dados indicadas</h2>
-            </div>
-            <div class="center">
-              <a href="https://gedweb.ifpb.edu.br">
-                <img
-                  src="https://gustavonogueira.files.wordpress.com/2024/02/gedweb002.png"
-                  height="90"
-                  width="90"
-                /> </a
-              ><a href="https://repositorio.ifpb.edu.br/"
-                ><img
-                  src="https://www.ifpb.edu.br/imagens/sistemas/repositorio-digital"
-                  height="90"
-                  width="90"
-                />
-              </a>
-              <a
-                href="https://www-periodicos-capes-gov-br.ez291.periodicos.capes.gov.br/index.php"
-                title="Portal da CAPES"
-                target="_blank"
-                rel="noopener"
-                ><img
-                  src="https://www.ufpb.br/antigo/sites/default/files/Capes%20Portal%20periodicos.jpg"
-                  height="100"
-                  width="100"
-              /></a>
-              <a
-                href="https://www-periodicos-capes-gov-br.ez291.periodicos.capes.gov.br/?option=com_plogin&amp;ym=3&amp;pds_handle=&amp;calling_system=primo&amp;institute=CAPES&amp;targetUrl=http://www-periodicos-capes-gov-br.ez291.periodicos.capes.gov.br&amp;Itemid=155&amp;pagina=CAFe"
-                ><img
-                  src="https://ccs2.ufpel.edu.br/wp/wp-content/uploads/2016/04/cafe.png"
-                  height="100"
-                  width="100"
-              /></a>
-              <a href="http://bdtd.ibict.br/vufind/"
-                ><img
-                  src="https://fasbam.edu.br/wp-content/uploads/2020/04/BDTD.png"
-                  height="100"
-                  width="100" /></a
-              >&nbsp;<a
-                href="http://www.dominiopublico.gov.br/pesquisa/PesquisaObraForm.jsp"
-                title="Domínio público"
-                target="_blank"
-                rel="noopener"
-                ><img
-                  src="https://escolaweb.educacao.al.gov.br/uploads/0ae9e91a-16ee-43d3-a448-122ce6fbf016.jpg"
-                  alt="Nome da Plataforma"
-                  width="100"
-                  height="100"
-              /></a>
-              <a href="https://scholar.google.com.br/"
-                ><img
-                  src="https://4.bp.blogspot.com/-8mqqT7CIllo/VOt0AwVfRSI/AAAAAAAAAV0/rya6IBXigis/s1600/scholar_logo_lg_2011.gif"
-                  height="100"
-                  width="100"
-              /></a>
-              <a href="https://www.scielo.org/php/index.php"
-                ><img
-                  src="https://scielo.org/static/images/logo-scielo-portal.svg"
-                  height="100"
-                  width="100"
-              /></a>
-              <a href="http://books.scielo.org/"
-                ><img
-                  src="data:image/jpeg;base64,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"
-                  height="100"
-                  width="100"
-              /></a>
-            </div>
-            <div><hr /></div>
-            <div>
-              <strong>Mais informações sobre a biblioteca</strong>
-            </div>
-            <div class="center">
-              <div class="center">
-                <a
-                  href="https://www.ifpb.edu.br/campinagrande/assuntos/biblioteca"
-                  >Campina Grande</a
-                >
-                <a href="https://www.instagram.com/biblioteca.ifpb.cg"
-                  ><img
-                    src="https://logodownload.org/wp-content/uploads/2017/04/instagram-logo-3.png"
-                    alt="Image"
-                    height="22"
-                    width="22"
-                  />
-                </a>
-                <a href="https://api.whatsapp.com/send?phone=558321026222"
-                  ><img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/WhatsApp_logo-color-vertical.svg/2048px-WhatsApp_logo-color-vertical.svg.png"
-                    alt="Image"
-                    height="22"
-                    width="22"
-                  />
-                </a>
-              </div>
-              -
-              <div class="center">
-                <a
-                  href="https://www.ifpb.edu.br/campinagrande/assuntos/biblioteca"
-                  >Campina Grande</a
-                >
-                <a href="https://www.instagram.com/biblioteca.ifpb.cg"
-                  ><img
-                    src="https://logodownload.org/wp-content/uploads/2017/04/instagram-logo-3.png"
-                    alt="Image"
-                    height="22"
-                    width="22"
-                  />
-                </a>
-                <a href="https://api.whatsapp.com/send?phone=558321026222"
-                  ><img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/WhatsApp_logo-color-vertical.svg/2048px-WhatsApp_logo-color-vertical.svg.png"
-                    alt="Image"
-                    height="22"
-                    width="22"
-                  />
-                </a>
-              </div>
-            </div>
-            <div><hr /></div>
-            <div class="center">
-              Siga-nos no
-              <img
-                src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png"
-              />:
-              <a href="https://www.instagram.com/fundacaocasadejose/"> FCJA </a
-              >,
-              <a href="https://www.instagram.com/bibliotecadurmeval/">
-                Biblioteca Durmeval Trigueiro Mendes</a
-              >
-            </div>
-            <div></div>
-            <div><hr /></div>
-            <div>
-              Fundação Casa de José Americo - FCJA <br />
-              Biblioteca Durmeval Trigueiro Mendes <br />
-              Dúvidas e sugestões sobre o sistema - exemplo@email.com
-            </div>
-            <script>
-              (function (i, s, o, g, r, a, m) {
-                i["GoogleAnalyticsObject"] = r;
-                (i[r] =
-                  i[r] ||
-                  function () {
-                    (i[r].q = i[r].q || []).push(arguments);
-                  }),
-                  (i[r].l = 1 * new Date());
-                (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
-                a.async = 1;
-                a.src = g;
-                m.parentNode.insertBefore(a, m);
-              })(
-                window,
-                document,
-                "script",
-                "https://www.google-analytics.com/analytics.js",
-                "ga"
-              );
-
-              ga("create", "UA-98850790-1", "auto");
-              ga("send", "pageview");
-            </script>
-            <div class="work_area">
-              <h2><br />Área de trabalho - equipe</h2>
-              <a
-                href="http://biblioteca-adm.ifpb.edu.br/"
-                target="_blank"
-                rel="noopener"
-              >
-                <button class="button_work_area">LOGIN KOHA</button>
-              </a>
-              -
-              <a
-                href="https://repositorio.ifpb.edu.br/password-login"
-                target="_blank"
-                rel="noopener"
-                ><button class="button_work_area">LOGIN REPOSITÓRIO</button>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="row">
+<div class="col">
+<div id="opaccredits">
+<div class="default_item">
+<div class="default_body">
+<div class="center">Siga-nos no <img src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png" />: <a href="https://www.instagram.com/fundacaocasadejose/"> FCJA, </a><a href="https://www.instagram.com/bibliotecadurmeval/"> Biblioteca Durmeval Trigueiro Mendes </a></div>
+<div></div>
+<div><hr /></div>
+<div>Funda&ccedil;&atilde;o Casa de Jos&eacute; Americo - FCJA <br />Biblioteca Durmeval Trigueiro Mendes <br />D&uacute;vidas e sugest&otilde;es sobre o sistema - exemplo@email.com</div>
+<div class="work_area">
+<h2><br />&Aacute;rea de trabalho - equipe</h2>
+<div class="actions"><a href="/" target="_blank" rel="noopener"> <button class="button_work_area">LOGIN KOHA</button> </a> <a href="#" target="_blank" rel="noopener"> <button class="button_work_area">LOGIN REPOSIT&Oacute;RIO</button> </a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
