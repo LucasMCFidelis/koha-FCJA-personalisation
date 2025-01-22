@@ -8,9 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
       getComputedStyle(mainContent).display === "none";
 
     if (isMainContentHidden) {
-      loginContent.style.border = "2px solid red"; // Adiciona uma borda para verificar a seleção
-    } else {
-      loginContent.style.border = ""; // Remove a borda caso o elemento não esteja oculto
+      loginContent.classList.remove("col-lg-3");
     }
   } else {
     console.warn(
