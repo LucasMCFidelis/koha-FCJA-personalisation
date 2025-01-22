@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const mainContent = document.querySelector("#notloggedin .maincontent");
+  const mainContent = document.getElementById("login-maincontent");
   const loginContent = document.getElementById("login-content");
 
   if (mainContent && loginContent) {
