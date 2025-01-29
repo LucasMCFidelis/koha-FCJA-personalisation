@@ -16,3 +16,23 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const creditsSection = document.getElementById("opaccredits");
+  if (creditsSection) {
+    creditsSection.innerHTML += `
+      <div class="work_area">
+        <h2><br />&Aacute;rea de trabalho - equipe</h2>
+        <div class="actions">
+          <a href="http://localhost:8080" target="_blank" rel="noopener">
+            <button class="btn btn-primary">LOGIN KOHA</button>
+          </a>
+          <a href="#" target="_blank" rel="noopener">
+            <button class="btn btn-primary">
+              LOGIN REPOSIT&Oacute;RIO
+            </button>
+          </a>
+        </div>
+    `;
+  }
+});
