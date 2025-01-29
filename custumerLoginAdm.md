@@ -8,7 +8,16 @@ Antes de começar, certifique-se de ter as permissões administrativas necessár
 
 ## Etapas
 
-### 1. Acessar permissões administrativas
+### 1. Configurar as variáveis no System Preferences
+
+1. Acesse o **Koha Staff Interface**.
+2. Navegue até **Administração > Preferências do Sistema**.
+3. Adicione ou edite as seguintes preferências:
+   - `OPACBaseURL` → Defina a URL do OPAC.
+
+---
+
+### 2. Acessar permissões administrativas
 
 ```bash
 sudo su
@@ -18,7 +27,7 @@ Insira a senha do sistema quando solicitado.
 
 ---
 
-### 2. Navegar para o diretório dos arquivos a serem editados
+### 3. Navegar para o diretório dos arquivos a serem editados
 
 ```bash
 cd ../../usr/share/koha/intranet/htdocs/intranet-tmpl/prog/en/modules
@@ -28,7 +37,7 @@ Este é o diretório onde se encontra o arquivo principal da interface administr
 
 ---
 
-### 3. Editar o arquivo `auth.tt`
+### 4. Editar o arquivo `auth.tt`
 
 Abra o arquivo em um editor de texto:
 
@@ -36,14 +45,14 @@ Abra o arquivo em um editor de texto:
 nano auth.tt
 ```
 
-#### 3.1. Adicionar personalização após o elemento `<h1>`
+#### 4.1. Adicionar personalização após o elemento `<h1>`
 
 Localize o elemento `<h1>` no código e adicione o seguinte trecho de HTML logo após:
 
 ```html
 <center>
   <img
-    src="https://pbs.twimg.com/profile_images/2391557581/x"
+    src="[% Koha.Preference('OPACBaseURL') %]/custom/logo_fcja.jpeg"
     alt="Logo FCJA"
     height="205"
     width="205"
@@ -55,7 +64,7 @@ Salve e feche o arquivo pressionando `CTRL+O`, seguido de `ENTER`, e depois `CTR
 
 ---
 
-### 4. Reiniciar os serviços do Koha (se necessário)
+### 5. Reiniciar os serviços do Koha (se necessário)
 
 Se as alterações não forem refletidas imediatamente, reinicie os serviços do Koha:
 
@@ -65,7 +74,7 @@ sudo systemctl restart koha-common
 
 ---
 
-### 5. Verificar as alterações
+### 6. Verificar as alterações
 
 Recarregue a página de login da interface administrativa no navegador e confirme se a personalização foi aplicada com sucesso.
 
