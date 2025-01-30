@@ -1,4 +1,5 @@
-# Passo a Passo: Personalizando a Página de Login da Interface Administrativa do Koha
+
+# Passo a Passo: Personalizando a Página de Login da Interface Administrativa do Koha Usando `IntranetUserJS`
 
 ## Pré-requisitos
 
@@ -17,72 +18,61 @@ Antes de começar, certifique-se de ter as permissões administrativas necessár
 
 ---
 
-### 2. Acessar permissões administrativas
+### 2. Navegar para a área de edição do `IntranetUserJS`
 
-```bash
-sudo su
-```
-
-Insira a senha do sistema quando solicitado.
+1. No Koha Staff Interface, navegue até **Administração > Personalizações > Javascript do Usuário da Intranet**.
+2. Na seção **IntranetUserJS**, você poderá adicionar scripts personalizados que serão executados na página de login da interface administrativa.
 
 ---
 
-### 3. Navegar para o diretório dos arquivos a serem editados
+### 3. Adicionar o código JavaScript personalizado
 
-```bash
-cd ../../usr/share/koha/intranet/htdocs/intranet-tmpl/prog/en/modules
+No campo de edição do **IntranetUserJS**, adicione o seguinte código:
+
+```javascript
+$(document).ready(function() {
+  const loginContainer = document.getElementById("login");
+  if (!loginContainer) {
+    return;
+  }
+
+  const h1Element = loginContainer.querySelector("h1");
+  if (!h1Element) {
+    return;
+  }
+
+  const OPACBaseURL = "[$Koha.Preference('OPACBaseURL')%]"; // Obtém a URL configurada no System Preferences
+  const imgHTML = `<img src="${OPACBaseURL}/custom/logo_fcja.jpeg" width="205" height="205" style="display: block; margin: 20px auto;" />`;
+
+  h1Element.insertAdjacentHTML("afterend", imgHTML);
+});
 ```
 
-Este é o diretório onde se encontra o arquivo principal da interface administrativa.
+Este código realiza a inserção da imagem logo após o elemento `<h1>` na página de login, usando a URL do OPAC configurada nas preferências do Koha.
 
 ---
 
-### 4. Editar o arquivo `auth.tt`
+### 4. Salvar as alterações
 
-Abra o arquivo em um editor de texto:
-
-```bash
-nano auth.tt
-```
-
-#### 4.1. Adicionar personalização após o elemento `<h1>`
-
-Localize o elemento `<h1>` no código e adicione o seguinte trecho de HTML logo após:
-
-```html
-<center>
-  <img
-    src="[% Koha.Preference('OPACBaseURL') %]/custom/logo_fcja.jpeg"
-    alt="Logo FCJA"
-    height="205"
-    width="205"
-  />
-</center>
-```
-
-Salve e feche o arquivo pressionando `CTRL+O`, seguido de `ENTER`, e depois `CTRL+X`.
+Após adicionar o código, clique em **Salvar** para aplicar as mudanças.
 
 ---
 
-### 5. Reiniciar os serviços do Koha (se necessário)
-
-Se as alterações não forem refletidas imediatamente, reinicie os serviços do Koha:
-
-```bash
-sudo systemctl restart koha-common
-```
-
----
-
-### 6. Verificar as alterações
+### 5. Verificar as alterações
 
 Recarregue a página de login da interface administrativa no navegador e confirme se a personalização foi aplicada com sucesso.
 
 ---
 
+## Aviso ⚠️
+
+O código acima pode eventualmente estar desatualizado. Recomenda-se consultar os arquivos correspondentes para evitar problemas.
+
+---
+
 ## Considerações finais
 
-Caso algo não funcione conforme esperado, verifique novamente as edições realizadas no arquivo `auth.tt`. Em caso de problemas persistentes, consulte os logs do sistema para identificar possíveis erros:
+Caso algo não funcione conforme esperado, verifique o código inserido no campo **IntranetUserJS**. Em caso de problemas persistentes, consulte os logs do sistema para identificar possíveis erros:
 
 ```bash
 sudo tail -f /var/log/koha/opac-error.log
@@ -90,3 +80,6 @@ sudo tail -f /var/log/koha/opac-error.log
 
 Se precisar de suporte adicional, consulte a documentação oficial do Koha ou a comunidade de usuários.
 
+---
+
+Agora, sua personalização da tela de login será realizada de forma mais direta, sem necessidade de editar diretamente os arquivos de template do Koha, utilizando a opção `IntranetUserJS` para inserção do código JavaScript.
