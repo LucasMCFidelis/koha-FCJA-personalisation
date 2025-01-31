@@ -19,11 +19,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   if (!window.staffClientBaseURL) {
-    console.warn(
-      "staffClientBaseURL deve ser definida nas preferências do sistema"
-    );
+    console.warn("staffClientBaseURL deve ser definida nas preferências do sistema");
     return;
   }
+  if (!window.repositoryBaseURL) {
+    console.warn("repositoryBaseURL não esta definida nas preferências do sistema");
+  }
+
 
   const creditsSection = document.getElementById("opaccredits");
   if (creditsSection) {
@@ -34,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <a href="${window.staffClientBaseURL}" target="_blank" rel="noopener">
             <button class="btn btn-primary">LOGIN KOHA</button>
           </a>
-          <a href="#" target="_blank" rel="noopener">
+          <a href="${repositoryBaseURL}" target="_blank" rel="noopener">
             <button class="btn btn-primary">
               LOGIN REPOSIT&Oacute;RIO
             </button>
