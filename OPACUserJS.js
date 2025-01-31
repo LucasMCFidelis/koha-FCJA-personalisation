@@ -26,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
     console.warn("repositoryBaseURL não esta definida nas preferências do sistema");
   }
 
-
   const creditsSection = document.getElementById("opaccredits");
   if (creditsSection) {
     creditsSection.innerHTML += `
@@ -36,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <a href="${window.staffClientBaseURL}" target="_blank" rel="noopener">
             <button class="btn btn-primary">LOGIN KOHA</button>
           </a>
-          <a href="${repositoryBaseURL}" target="_blank" rel="noopener">
+          <a href="${window.repositoryBaseURL}" target="_blank" rel="noopener">
             <button class="btn btn-primary">
               LOGIN REPOSIT&Oacute;RIO
             </button>
