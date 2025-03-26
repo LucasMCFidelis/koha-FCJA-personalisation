@@ -11,6 +11,7 @@
       .header_container {
         display: flex; /* Usando Flexbox */
         align-items: center; /* Alinha verticalmente os itens */
+        justify-content: space-between;
         background-color: #b21616;
         background-image: linear-gradient(5deg, #310000, #b40000, #310000);
         color: #fff;
@@ -32,6 +33,7 @@
 
       /* Contêiner de texto */
       .header_text {
+        flex: 1;
         height: 100%;
         text-align: left; /* Alinha o texto à esquerda */
         margin-left: 20px;
@@ -69,9 +71,8 @@
     </style>
 
     <header class="header_container">
-      <a href="#" class="teste"
-        ><img src="./logo_fcja.jpeg" alt="Logo FCJA" class="header_logo"
-      /></a>
+      <img src="./logo_fcja.jpeg" alt="Logo FCJA" class="header_logo"
+      />
       <div class="header_text">
         <span class="header_extra">Fundação Casa de José Américo</span>
         <h1 class="header_title">FCJA</h1>
@@ -79,6 +80,11 @@
           >Sistema Integrado de Bibliotecas da FCJA</span
         >
       </div>
+      <img
+        src="./logo_bib.jpeg"
+        alt="Logo Biblioteca Dumerval Trigueiro Mendes"
+        class="header_logo"
+      />
     </header>
   </body>
 </html>
