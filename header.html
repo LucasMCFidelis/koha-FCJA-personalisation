@@ -11,6 +11,7 @@
       .header_container {
         display: flex; /* Usando Flexbox */
         align-items: center; /* Alinha verticalmente os itens */
+        justify-content: space-between;
         background-color: #b21616;
         background-image: radial-gradient(
           ellipse at center center,
@@ -61,7 +62,7 @@
       }
 
       /* Esconde o texto em telas pequenas */
-      @media (max-width: 400px) {
+      @media (max-width: 600px) {
         .header_text {
           display: none; /* Oculta o bloco de texto */
         }
