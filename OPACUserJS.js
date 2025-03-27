@@ -45,3 +45,10 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const OPACBaseURL = "http://localhost"; // Defina a URL corretamente
+
+    document.getElementById("logo_fcja").src = `${OPACBaseURL}/custom/logo_fcja.jpeg`;
+    document.getElementById("logo_bib").src = `${OPACBaseURL}/custom/logo_bib.jpeg`;
+});
