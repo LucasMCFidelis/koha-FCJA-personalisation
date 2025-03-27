@@ -75,6 +75,9 @@ Caso a preferência `repositoryBaseURL` não esteja disponível na interface adm
      var repositoryBaseURL = "[% Koha.Preference('repositoryBaseURL') %]";
      console.log("repositoryBaseURL:", repositoryBaseURL);
      window.repositoryBaseURL = repositoryBaseURL;
+     var OPACBaseURL = "[% Koha.Preference('OPACBaseURL') %]";
+     console.log("OPACBaseURL:", OPACBaseURL);
+     window.OPACBaseURL = OPACBaseURL;
    </script>
    ```
 5. Salve e feche o arquivo pressionando `CTRL+O`, seguido de `ENTER`, e depois `CTRL+X`.
