@@ -19,11 +19,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   if (!window.staffClientBaseURL) {
-    console.warn("staffClientBaseURL deve ser definida nas preferências do sistema");
+    console.warn(
+      "staffClientBaseURL deve ser definida nas preferências do sistema"
+    );
     return;
   }
   if (!window.repositoryBaseURL) {
-    console.warn("repositoryBaseURL não esta definida nas preferências do sistema");
+    console.warn(
+      "repositoryBaseURL não esta definida nas preferências do sistema"
+    );
   }
 
   const creditsSection = document.getElementById("opaccredits");
@@ -47,8 +51,15 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    const OPACBaseURL = "http://localhost"; // Defina a URL corretamente
+  if (!window.OPACBaseURL) {
+    console.warn("OPACBaseURL deve ser definida nas preferências do sistema");
+    return;
+  }
 
-    document.getElementById("logo_fcja").src = `${OPACBaseURL}/custom/logo_fcja.jpeg`;
-    document.getElementById("logo_bib").src = `${OPACBaseURL}/custom/logo_bib.jpeg`;
+  document.getElementById(
+    "logo_fcja"
+  ).src = `${OPACBaseURL}/custom/logo_fcja.jpeg`;
+  document.getElementById(
+    "logo_bib"
+  ).src = `${OPACBaseURL}/custom/logo_bib.jpeg`;
 });
